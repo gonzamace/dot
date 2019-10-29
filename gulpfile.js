@@ -14,14 +14,14 @@ gulp.task('csso', function() {
     return gulp.src(css_pattern)
         .pipe(concat('app.min.css'))
         .pipe(csso())
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('dist/css'))
 });
 
 gulp.task('scripts',['csso'], function() {
     return gulp.src(js_pattern)
         .pipe(concat('app.min.js'))
         .pipe(uglify().on('error', gutil.log))
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('dist/js'))
 });
 
 gulp.task('lint',['scripts'], function() {
