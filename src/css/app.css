@@ -1,50 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
-html, body, div, span, applet, object, iframe, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 body {
 	background: none;
 	font-family: 'Roboto', sans-serif;
@@ -85,7 +39,7 @@ footer {
 }
 #description{
 	background-color: #6f6f6f;
-	min-height: 600px;
+	/*min-height: 600px;*/
 }
 #accordeon{
 	min-height: 600px;
@@ -103,7 +57,7 @@ footer {
 	color: white;
 	position: absolute;
 	bottom: 0;
-
+	left: 0;
 }
 .dot-row{
 	height: 100%;
@@ -134,6 +88,53 @@ footer {
 	border:5px solid #ffffff; 
 }
 
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 30px 10px;
+}
+.col-one {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px;
+    
+}
+.col-two {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px;
+    
+    float: right;
+}
+#description .col-two{
+	width: 50%;
+}
+#description .col-one{
+	width: 45%;
+}
+#description img{
+	border: 20px solid #343434;
+    border-radius: 50%;
+}
+
+#description .col-two p{
+    font-size: .9em;
+    line-height: 1.4em;
+}
+/*
+#accordeon .panel .container{
+	width: 98%;
+}
+#accordeon .panel .col-one{
+	width: 30%%;
+}
+#accordeon .panel .col-two{
+	width: 65%;
+	color: #6e6e6e;
+    font-size: 0.9em;
+}*/
+
+
 @media only screen and (max-width: 767px) {
 	#landing{
 		background: url(../../src/img/camada_1-mobile.png)center 150px/contain no-repeat fixed #464646;
@@ -160,7 +161,42 @@ footer {
 	.footer-mask{
 	    bottom: 310px;
 	}
-	#slider{
-		display: none;
+
+	.container{
+		width: 95%;
+	}
+	.col-one {
+	    display: block;    
+	}
+	.col-two {
+	    display: -block;
+	    float: none;
+	}
+	#description .col-one {
+	    width: 95%;
+	    text-align: center;
+	}
+	#description .col-one img {
+	    width: 87%;
+	}
+	#description .col-two {
+	    width: 95%;
+	    text-align: center;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
