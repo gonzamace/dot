@@ -42,7 +42,7 @@ footer {
 	/*min-height: 600px;*/
 }
 #accordeon{
-	min-height: 600px;
+	/*min-height: 600px;*/
 	background-color: #bebebe;
 }
 #form{
@@ -110,6 +110,7 @@ footer {
 	width: 50%;
 }
 #description .col-one{
+	text-align: center;
 	width: 45%;
 }
 #description img{
@@ -122,31 +123,31 @@ footer {
     line-height: 1.4em;
 }
 
-#accordeon .button{
+#accordeon .accordion-button{
 	background-color: #6e6e6e;
     padding: 10px;
     height: 30px;
     cursor: pointer;
-    /*margin-bottom: 3px;*/
+    margin-top: 1px;
 }
-#accordeon .button .col-one {
+#accordeon .accordion-button > .col-one {
     font-weight: 800;
 }
-#accordeon .button:first-child{
+#accordeon .accordion-button:first-child{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-#accordeon .button:last-child{
+#accordeon .accordion-button:last-child{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-#accordeon .button.active{
+#accordeon .accordion-button.active{
 	background-color: #ffffff;
 	color: #6e6e6e;
 }
 
-#accordeon .button .col-two {
+#accordeon .accordion-button > .col-two {
     background: url(../../src/img/arrow_down_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -157,17 +158,21 @@ footer {
     padding: 0px;
 }
 
-#accordeon .button .col-two.active {
+#accordeon .accordion-button.active .col-two {
     background: url(../../src/img/arrow_up_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
-
 }
 
 #accordeon .panel {
+	display: none;
 	background: #ffffff;
 	padding: 0px 10px;
 	position: relative;
+	margin-top: -1px;
+}
+#accordeon .accordion-button.active + .panel{
+	display: block;
 }
 
 #accordeon .panel .col-one img{

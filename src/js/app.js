@@ -22,10 +22,23 @@ $(document).ready(function(){
 	})
 
 	$('.dot').on('click', function(ev){
+		var elm = $(this);
 		changeBackground(this.id);
 		$('.dot').removeClass('active')
-		$(this).addClass('active')
-
+		elm.addClass('active')
 	})
 
+	$('.accordion-button').on('click', function(){
+		var elm = $(this);
+
+		if (elm.hasClass('active')){
+			elm.removeClass('active')
+		} else {
+			$('.accordion-button').removeClass('active');
+			elm.addClass('active')
+		}
+		
+
+
+	})
 })
