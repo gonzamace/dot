@@ -121,18 +121,67 @@ footer {
     font-size: .9em;
     line-height: 1.4em;
 }
-/*
-#accordeon .panel .container{
-	width: 98%;
+
+#accordeon .button{
+	background-color: #6e6e6e;
+    padding: 10px;
+    height: 30px;
+    cursor: pointer;
+    /*margin-bottom: 3px;*/
 }
-#accordeon .panel .col-one{
-	width: 30%%;
+#accordeon .button .col-one {
+    font-weight: 800;
 }
-#accordeon .panel .col-two{
-	width: 65%;
+#accordeon .button:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#accordeon .button:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#accordeon .button.active{
+	background-color: #ffffff;
 	color: #6e6e6e;
-    font-size: 0.9em;
-}*/
+}
+
+#accordeon .button .col-two {
+    background: url(../../src/img/arrow_down_accordion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    padding: 0px;
+}
+
+#accordeon .button .col-two.active {
+    background: url(../../src/img/arrow_up_accordion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+#accordeon .panel {
+	background: #ffffff;
+	padding: 0px 10px;
+	position: relative;
+}
+
+#accordeon .panel .col-one img{
+	border: 10px solid #6d6d6d;
+}
+
+#accordeon .panel .col-two{
+	padding-left: 20px;
+	position: absolute;
+	top: 30%;
+	width: 60%;
+	float: none;
+	color: #6e6e6e;
+}
 
 
 @media only screen and (max-width: 767px) {
