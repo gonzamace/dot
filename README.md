@@ -1,9 +1,4 @@
 # dot
-Instruções
-
-Queremos conhecer um pouco mais suas habilidades técnicas. Pra isso, leia as instruções da avaliação e em seguida acesse o link disponível no final da página.
-
-Objetivo:
 
 Desenvolver o front-end dos arquivos PSD disponível no link;
 O resultado deve ser responsivo e a versão mobile deve condizer com o arquivo PSD mobile;
