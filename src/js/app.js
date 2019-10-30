@@ -6,13 +6,33 @@ function scrollToElement(el, ms){
 }
 
 function changeBackground(img){
-	var image = $('#landing');
-
-    image.fadeTo('slow', 0.3, function(ev){
-	    $(this).css('background-image', 'url(src/img/camada_'+img+'.png)');
-	}).fadeTo('slow', 1);
+	var elmLand = $('#landing'),
+		elmPort = $('#landing .container'),
+		isLand = ($(document).width() > 767) ? true : false;
+	
+	if (isLand) {
+		console.log('siLand')
+		// elmPort.css('background-image', 'none');
+		elmLand.fadeTo('slow', 0.3, function(ev){
+	    	$(this).css('background-image', 'url(src/img/camada_'+img+'.png)');
+		}).fadeTo('slow', 1);	
+	} else {
+		elmPort.fadeTo('slow', 0.3, function(ev){
+			var size= (img === 'landing_1') ? 'contain':'cover';
+	    	$(this).css({
+	    		'background-image': 'url(src/img/camada_'+img+'.png)',
+	    		'background-position': 'center 150px',
+	    		'background-size': size,
+	    	});
+		}).fadeTo('slow', 1);	
+	}
+    
 }
 
+$(window).on('resize', function(event) {
+	// console.log('resize')
+	// changeBackground(this.id);
+});
 
 $(document).ready(function(){
 	console.log('im ready'); 

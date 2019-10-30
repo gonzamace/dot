@@ -12,7 +12,7 @@ footer {
 #landing{
 	height: 100vh;
 	position: relative;
-	background: url('../../src/img/camada_landing_1.png') center center/cover no-repeat fixed #464646;
+	background: url('../../src/img/camada_landing_1.png') center center/cover no-repeat #464646;
 	text-align: center;
 	transition: background 1s linear;
 }
@@ -234,6 +234,7 @@ footer {
     padding: 0 !important;
     margin-left: 10px !important;
     height: 100px !important;
+    width: 70%;
 }
 #form .input-container:nth-child(4) > label{
 	vertical-align: top;
@@ -279,12 +280,17 @@ footer .footer-mask > p{
 	transform: translateY(-50%);
 }
 @media only screen and (max-width: 767px) {
-	#landing{
-		background: url(../../src/img/camada_1-mobile.png)center 150px/contain no-repeat fixed #464646;
+	#landing .container{
+		height: 367px;
+		background: url(../../src/img/camada_landing_1.png)center 150px/contain no-repeat #464646;
+	}
+	#landing {
+		background: none;
+		height: auto;
 	}
 	#landing h1, h4{
 		margin-top: 0;
-		padding-top: 30px;
+		padding-top: 0px;
 		text-align: center;
 		font-weight: 500;
 	}
@@ -292,17 +298,21 @@ footer .footer-mask > p{
 		text-transform: uppercase;
 		font-weight: 800;
 		color: #fff;
-		font-size: 2em;
+		font-size: 2.3em;
+		margin-bottom: 10px;
 	}
 	#landing h4{
-
-		width: 50%;
+    	width: 80%;
+    	font-size: 1.2em;
 		text-align: center;
 		margin: 0 auto;
 	  	color: #fff;
 	}
-	.footer-mask{
-	    bottom: 310px;
+	#landingGoDown{
+		margin-top: 30px;
+	}
+	#landing .footer-mask{
+	    top: 347px;
 	}
 
 	.container{
@@ -326,6 +336,41 @@ footer .footer-mask > p{
 	    width: 95%;
 	    text-align: center;
 	}
+	#description .col-two > p:nth-child(3){
+		font-weight: bold;
+		font-size: 1em;
+	}
+	#accordeon{
+		height: 630px !important; 
+	}
+	#accordeon .panel .col-two{
+		display: block;
+	    position: relative;
+	    padding: 10px;
+	    width: 90%;
+	    text-align: justify;
+	}
+	#accordeon .panel .col-one{
+	    text-align: center;
+	}
+	#accordeon .accordion-button>.col-one{
+	    position: relative;
+	    top: 20%;
+	    transform: translateY(-50%);
+	    width: 85%;
+	    display: inline-block;
+	}
+	#form .input-container:nth-child(2), #form .input-container:nth-child(3){
+		display: block;
+		width: 100%;
+	}
+	#form .input-container:nth-child(4){
+		margin-top: 90px;
+	}
+	#mensagem{
+		width: 50%;
+	}
+
 }
 
 
