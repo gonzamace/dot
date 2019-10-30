@@ -8,7 +8,7 @@ function scrollToElement(el, ms){
 function changeBackground(img){
 	var image = $('#landing');
 
-    image.fadeTo('slow', 0.3, function(){
+    image.fadeTo('slow', 0.3, function(ev){
 	    $(this).css('background-image', 'url(src/img/camada_'+img+'.png)');
 	}).fadeTo('slow', 1);
 }
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		elm.addClass('active')
 	})
 
-	$('.accordion-button').on('click', function(){
+	$('.accordion-button').on('click', function(ev){
 		var elm = $(this);
 
 		if (elm.hasClass('active')){
@@ -37,8 +37,10 @@ $(document).ready(function(){
 			$('.accordion-button').removeClass('active');
 			elm.addClass('active')
 		}
-		
-
 
 	})
+
+	$('.input-container').on('click', function(ev) {
+		$(this).children('input,textarea').focus()
+	});
 })

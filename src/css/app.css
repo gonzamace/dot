@@ -1,6 +1,6 @@
 
 body {
-	background: none;
+	background: #454545;
 	font-family: 'Roboto', sans-serif;
 	color: white;
 }
@@ -42,11 +42,11 @@ footer {
 	/*min-height: 600px;*/
 }
 #accordeon{
-	/*min-height: 600px;*/
+	min-height: 500px;
 	background-color: #bebebe;
 }
 #form{
-	min-height: 600px;
+	/*min-height: 600px;*/
 	background-color: #454545;
 }
 .footer-mask{
@@ -133,11 +133,11 @@ footer {
 #accordeon .accordion-button > .col-one {
     font-weight: 800;
 }
-#accordeon .accordion-button:first-child{
+#accordeon > .container .accordion-button:first-child{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-#accordeon .accordion-button:last-child{
+#accordeon > .container .accordion-button:last-child{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -158,7 +158,7 @@ footer {
     padding: 0px;
 }
 
-#accordeon .accordion-button.active .col-two {
+#accordeon .accordion-button.active > .col-two {
     background: url(../../src/img/arrow_up_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -166,13 +166,24 @@ footer {
 
 #accordeon .panel {
 	display: none;
+	/*opacity: 0;*/
 	background: #ffffff;
 	padding: 0px 10px;
 	position: relative;
 	margin-top: -1px;
+	-moz-transform: scale(0);
+	-webkit-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
 }
 #accordeon .accordion-button.active + .panel{
 	display: block;
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
 }
 
 #accordeon .panel .col-one img{
@@ -188,7 +199,85 @@ footer {
 	color: #6e6e6e;
 }
 
+#form .input-container {
+	color: #333333;
+    height: 50px;
+    border-radius: 10px;
+    background: #bebebe;
+    outline: none;
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#form .input-container > label{
+	margin-left: 20px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+#form .input-style{
+    border: 0;
+    height: 30px;
+    /*width: 70%;*/
+    margin: 9px;
+    background-color: #bebebe;
+}
+#form .input-container:nth-child(2), #form .input-container:nth-child(3){
+	display: inline-block;
+	width: 46.1594%;
+}
+#form .input-container:nth-child(3){
+	float: right;
+}
 
+#mensagem{
+    margin:0 !important;
+    padding: 0 !important;
+    margin-left: 10px !important;
+    height: 100px !important;
+}
+#form .input-container:nth-child(4) > label{
+	vertical-align: top;
+}
+#form .input-container:nth-child(4){ 
+	height: 200px;
+	padding-top: 18px;
+}
+
+
+.button-container{
+	text-align:center;
+}
+.button-form {
+	background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+	background-color:#ffffff;
+	border-radius:5px;
+	border:1px solid #ffffff;
+	/*display:inline-block;*/
+	cursor:pointer;
+	color:#050505;
+	font-size:15px;
+	font-weight:bold;
+	padding:14px 23px;
+	text-decoration:none;
+	margin: 0 auto;
+}
+.button-form:hover {
+	background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+	background-color:#ffffff;
+}
+.button-form:active {
+	position:relative;
+	top:1px;
+}
+
+footer .footer-mask{
+	position: relative;
+}
+footer .footer-mask > p{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
 @media only screen and (max-width: 767px) {
 	#landing{
 		background: url(../../src/img/camada_1-mobile.png)center 150px/contain no-repeat fixed #464646;
