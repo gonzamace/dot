@@ -13,12 +13,12 @@ function changeBackground(elm){
 	$('[id^="'+dots+'"]').removeClass('active')
 		
 	if (isLand) {		
-    	elmLand.css('background-image', 'url(src/img/camada_'+img+'.png)');
+    	elmLand.css('background-image', 'url(img/camada_'+img+'.png)');
 		
 	} else {
 		size = (img === 'landing_1') ? 'contain':'cover';
 		elmPort.css({
-    		'background-image': 'url(src/img/camada_'+img+'.png)',
+    		'background-image': 'url(img/camada_'+img+'.png)',
     		'background-position': 'center 125px',
     		'background-size': size,
     	})
@@ -30,9 +30,14 @@ function changeBackground(elm){
 
 function switchAccordion(elm){
 	if (elm.hasClass('active')){
+		
 		elm.removeClass('active')
+		if (elm.hasClass('last'))elm.removeClass('default-border')
+
 	} else {
+		
 		$('.accordion-button').removeClass('active');
+		if (elm.hasClass('last')) elm.addClass('default-border') 
 		elm.addClass('active')
 	}
 }

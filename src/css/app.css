@@ -15,7 +15,7 @@ footer {
 #landing{
 	height: 100vh;
 	position: relative;
-	background: url('../../src/img/camada_landing_1.png') center center/cover no-repeat #464646;
+	background: url('../../img/camada_landing_1.png') center center/cover no-repeat #464646;
 	text-align: center;
 	/*transition: background 1s linear;*/
 }
@@ -178,6 +178,10 @@ footer {
     cursor: pointer;
     margin-top: 1px;
 }
+.default-border{
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
 #accordeon .accordion-button > .col-one {
     font-weight: 800;
 }
@@ -196,7 +200,7 @@ footer {
 }
 
 #accordeon .accordion-button > .col-two {
-    background: url(../../src/img/arrow_down_accordion.png);
+    background: url(../../img/arrow_down_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center ;
@@ -207,7 +211,7 @@ footer {
 }
 
 #accordeon .accordion-button.active > .col-two {
-    background: url(../../src/img/arrow_up_accordion.png);
+    background: url(../../img/arrow_up_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -331,7 +335,7 @@ footer .footer-mask > p{
 	#landing .container{
 		padding-top: 15px;
 		height: 300px;
-		background: url(../../src/img/camada_landing_1.png)center 125px/cover no-repeat #464646;
+		background: url(../../img/camada_landing_1.png)center 125px/cover no-repeat #464646;
 	}
 	#landing {
 		background: none;
