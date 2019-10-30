@@ -17,7 +17,7 @@ footer {
 	position: relative;
 	background: url('../../src/img/camada_landing_1.png') center center/cover no-repeat #464646;
 	text-align: center;
-	transition: background 1s linear;
+	/*transition: background 1s linear;*/
 }
 .arrow, .dot{
 	cursor: pointer;
@@ -135,10 +135,14 @@ footer {
 #slider .single-slider-container img{
 	width: 85%;
 }
+#slider .single-slider-container .text-container{
+	width: 85%;
+	margin: 0 auto;
+}
 #slider .container .arrow-slider{
 	display: inline-block;
     position: absolute;
-    top: 33%;
+    top: 27%;
     width: 120px;
     cursor: pointer;
 }
@@ -177,11 +181,11 @@ footer {
 #accordeon .accordion-button > .col-one {
     font-weight: 800;
 }
-#accordeon > .container .accordion-button:first-child{
+#accordeon .accordion-button:nth-child(1){
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-#accordeon > .container .accordion-button:last-child{
+#accordeon .accordion-button:nth-child(7){
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -326,8 +330,8 @@ footer .footer-mask > p{
 @media only screen and (max-width: 767px) {
 	#landing .container{
 		padding-top: 15px;
-		height: 326px;
-		background: url(../../src/img/camada_landing_1.png)center 125px/contain no-repeat #464646;
+		height: 300px;
+		background: url(../../src/img/camada_landing_1.png)center 125px/cover no-repeat #464646;
 	}
 	#landing {
 		background: none;
@@ -357,7 +361,7 @@ footer .footer-mask > p{
 		margin-top: 30px;
 	}
 	#landing .footer-mask{
-	    top: 311px;
+	    bottom: 0;
 	}
 	#slider .container{
 		width: 95%;
@@ -371,15 +375,18 @@ footer .footer-mask > p{
 		top: 89%;
 	}
 	#arrow_slider-left{
-		left:100px;
+		left:20%;
 	}
 	#arrow_slider-right{
-		right:100px;
+		right:20%;
 	}
 	#slider .single-slider-container img{
 		width: 95%;
 	}
 	#slider .single-slider-container{
+		width: 100%
+	}
+	#slider .single-slider-container .text-container{
 		width: 100%
 	}
 	#slider .single-slider-container p{
@@ -438,6 +445,9 @@ footer .footer-mask > p{
 	}
 	#form .input-container:nth-child(4){
 		margin-top: 90px;
+	}
+	#form .input-style{
+		    max-width: 180px;
 	}
 	#mensagem{
 		width: 50%;

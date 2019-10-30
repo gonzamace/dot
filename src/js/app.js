@@ -12,19 +12,16 @@ function changeBackground(elm){
 
 	$('[id^="'+dots+'"]').removeClass('active')
 		
-	if (isLand) {
-		elmLand.fadeTo('slow', 0.3, function(ev){
-	    	$(this).css('background-image', 'url(src/img/camada_'+img+'.png)');
-		}).fadeTo('slow', 1);	
+	if (isLand) {		
+    	elmLand.css('background-image', 'url(src/img/camada_'+img+'.png)');
+		
 	} else {
-		elmPort.fadeTo('slow', 0.3, function(ev){
-			size= (img === 'landing_1') ? 'contain':'cover';
-	    	$(this).css({
-	    		'background-image': 'url(src/img/camada_'+img+'.png)',
-	    		'background-position': 'center 125px',
-	    		'background-size': size,
-	    	});
-		}).fadeTo('slow', 1);	
+		size = (img === 'landing_1') ? 'contain':'cover';
+		elmPort.css({
+    		'background-image': 'url(src/img/camada_'+img+'.png)',
+    		'background-position': 'center 125px',
+    		'background-size': size,
+    	})
 	}
 
 	elm.addClass('active')
