@@ -1,8 +1,5 @@
-function scrollToElement(el, ms){
-	var speed = (ms) ? ms : 600;
-    $('html,body').animate({
-        scrollTop: $(el).offset().top
-    }, speed);
+function scrollToElement(el){
+    $(el).get(0).scrollIntoView();
 }
 
 function changeBackground(elm){
@@ -96,7 +93,9 @@ var Slider = {
 		Slider.slide(newSlide)
 	},
 	slide: function(newSlide){
-		$(Slider.holder).find('[id^="'+Slider.elm+'"]').removeClass('active')
+		$(Slider.holder)
+			.find('[id^="'+Slider.elm+'"]')
+			.removeClass('active')
 
 		for (var i = 0; i < newSlide.length; i++) {
 			$('#'+Slider.elm+newSlide[i]).addClass('active')
