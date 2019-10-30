@@ -9,6 +9,9 @@ footer {
 	text-align: center;
 	color: #fff;
 }
+.recuadro-img{
+	border: 10px solid #6d6d6d;
+}
 #landing{
 	height: 100vh;
 	position: relative;
@@ -21,28 +24,31 @@ footer {
 }
 #landing h1, h4{	
 	text-align: center;
-	font-weight: 500;
+	/*font-weight: 500;*/
 }
 #landing h1{
-	margin-top: 0;
-	padding-top: 30px;
-	color: #546130;
-	font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #546130;
+    font-size: 3em;
+    font-weight: 700;
 }
 #landing h4{
   	color: #2d3b09;
+  	margin-top: 5px;
+  	font-size: 1.2em;
 }
 
 #slider{
 	background-color: #454545;
-	min-height: 600px;
+	/*min-height: 600px;*/
 }
 #description{
 	background-color: #6f6f6f;
 	/*min-height: 600px;*/
 }
 #accordeon{
-	min-height: 500px;
+	min-height: 630px;
 	background-color: #bebebe;
 }
 #form{
@@ -91,7 +97,7 @@ footer {
 .container {
     width: 80%;
     margin: auto;
-    padding: 30px 10px;
+    padding: 50px 10px
 }
 .col-one {
     display: inline-block;
@@ -105,6 +111,42 @@ footer {
     padding: 5px;
     
     float: right;
+}
+
+#slider .container{
+	text-align: center;
+	position: relative;
+    width: 80%;
+}
+#slider .slider-container{
+	width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 300px;
+    vertical-align: top;
+}
+#slider .single-slider-container{
+	width: 33%;
+    display: none;
+}
+#slider .single-slider-container.active{
+    display: inline-block;
+}
+#slider .single-slider-container img{
+	width: 85%;
+}
+#slider .container .arrow-slider{
+	display: inline-block;
+    position: absolute;
+    top: 33%;
+    width: 120px;
+    cursor: pointer;
+}
+#slider .arrow-slider:nth-child(1){
+	left: 0;
+}
+#slider .arrow-slider:nth-child(3){
+	right: 0;
 }
 #description .col-two{
 	width: 50%;
@@ -125,7 +167,7 @@ footer {
 
 #accordeon .accordion-button{
 	background-color: #6e6e6e;
-    padding: 10px;
+    padding: 20px;
     height: 30px;
     cursor: pointer;
     margin-top: 1px;
@@ -186,10 +228,10 @@ footer {
 	transform: scale(1);
 }
 
-#accordeon .panel .col-one img{
+/*#accordeon .panel .col-one img{
 	border: 10px solid #6d6d6d;
 }
-
+*/
 #accordeon .panel .col-two{
 	padding-left: 20px;
 	position: absolute;
@@ -281,8 +323,9 @@ footer .footer-mask > p{
 }
 @media only screen and (max-width: 767px) {
 	#landing .container{
-		height: 367px;
-		background: url(../../src/img/camada_landing_1.png)center 150px/contain no-repeat #464646;
+		padding-top: 15px;
+		height: 326px;
+		background: url(../../src/img/camada_landing_1.png)center 125px/contain no-repeat #464646;
 	}
 	#landing {
 		background: none;
@@ -312,7 +355,7 @@ footer .footer-mask > p{
 		margin-top: 30px;
 	}
 	#landing .footer-mask{
-	    top: 347px;
+	    top: 311px;
 	}
 
 	.container{
@@ -341,7 +384,7 @@ footer .footer-mask > p{
 		font-size: 1em;
 	}
 	#accordeon{
-		height: 630px !important; 
+		height: inherit;
 	}
 	#accordeon .panel .col-two{
 		display: block;

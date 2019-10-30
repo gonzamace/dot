@@ -19,7 +19,7 @@ function changeBackground(img){
 			var size= (img === 'landing_1') ? 'contain':'cover';
 	    	$(this).css({
 	    		'background-image': 'url(src/img/camada_'+img+'.png)',
-	    		'background-position': 'center 150px',
+	    		'background-position': 'center 125px',
 	    		'background-size': size,
 	    	});
 		}).fadeTo('slow', 1);	
@@ -27,10 +27,44 @@ function changeBackground(img){
     
 }
 
-$(window).on('resize', function(event) {
-	// console.log('resize')
-	// changeBackground(this.id);
-});
+var slider = {
+	show : 3,
+	elms: [
+		'slider_1',
+		'slider_2',
+		'slider_3',
+		'slider_4',
+		'slider_5',
+		'slider_6',
+		'slider_7',
+		'slider_8',
+		'slider_9',
+	],
+	prev: function(slide){
+		
+		console.log(slide)
+		$('.single-slider-container').removeClass('active')
+		
+		for (var i = 0; i < slider.elms.length; i++) {
+			console.log(slider.elms[slide])
+		}
+
+		// $.each(slider.elms, function(index, el) {
+		// 	console.log(index, el)	
+		// 	$('#'+slider.elms[slide]).addClass('active')
+		// });		
+	},
+	next: function(slide){
+		
+		console.log(parseInt(slide)+1)
+		$('.single-slider-container').removeClass('active')
+		
+		$.each(slider.elms, function(index, el) {
+			console.log(index, el)	
+			$('#'+slider.elms[parseInt(slide)]).addClass('active')
+		});		
+	}
+}
 
 $(document).ready(function(){
 	console.log('im ready'); 
@@ -38,6 +72,19 @@ $(document).ready(function(){
 	$('#landingGoDown').on('click', function(ev){
 		scrollToElement('#slider', 1000);
 	})
+
+	$('.arrow-slider').on('click', function(event) {
+		var arrow = $(this).attr('class').split('arrow-slider ')[1],
+			actives = $('.slider-container').find('.single-slider-container.active'),
+			prev = actives[0].id.split('slider_')[1],
+			next = actives[2].id.split('slider_')[1];
+
+		if (arrow === 'left') {
+			slider.prev(prev)			
+		} else {
+			slider.next(next)
+		}
+	});
 
 	$('.dot').on('click', function(ev){
 		var elm = $(this);
