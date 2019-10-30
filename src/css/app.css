@@ -118,11 +118,11 @@ footer {
 	position: relative;
     width: 80%;
 }
-#slider .slider-container{
+#slider-container{
 	width: 80%;
     margin: 0 auto;
     overflow: hidden;
-    height: 300px;
+    height: 350px;
     vertical-align: top;
 }
 #slider .single-slider-container{
@@ -142,10 +142,10 @@ footer {
     width: 120px;
     cursor: pointer;
 }
-#slider .arrow-slider:nth-child(1){
+#arrow_slider-left{
 	left: 0;
 }
-#slider .arrow-slider:nth-child(3){
+#arrow_slider-right{
 	right: 0;
 }
 #description .col-two{
@@ -351,13 +351,40 @@ footer .footer-mask > p{
 		margin: 0 auto;
 	  	color: #fff;
 	}
-	#landingGoDown{
+	#landing_arrow{
 		margin-top: 30px;
 	}
 	#landing .footer-mask{
 	    top: 311px;
 	}
-
+	#slider .container{
+		width: 95%;
+    	height: 460px;
+	}
+	#slider-container{
+	    width: 100%;
+    	height: 400px;
+	}
+	#slider .container .arrow-slider{
+		top: 83%;
+	}
+	#arrow_slider-left{
+		left:80px;
+	}
+	#arrow_slider-right{
+		right:80px;
+	}
+	#slider .single-slider-container img{
+		width: 95%;
+	}
+	#slider .single-slider-container{
+		width: 100%
+	}
+	#slider .single-slider-container p{
+		width: 95%;
+	    margin: 0 auto;
+	    margin-top: 10px;
+	}
 	.container{
 		width: 95%;
 	}
