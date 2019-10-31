@@ -59,58 +59,53 @@ var Slider = {
 	sliders: [
 		{
 			img: 'img/camada_landing_1.png',
-			title: 'LOREM IPSUM',
+			title: 'magna aliqua',
 			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
 		},
 		{
 			img: 'img/camada_landing_2.png',
-			title: 'BARILOCHE',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			title: 'dolor sit',
+			txt: 'Integer euismod euismod risus eu consectetur. Cras ac metus metus. Pellentesque tempus faucibus urna, sed cursus felis consectetur et. Fusce suscipit, libero a accumsan rhoncus, nisl sem luctus sem, eu pharetra quam.'
 		},
 		{
 			img: 'img/camada_landing_3.png',
-			title: 'PRAIA DO ROSA',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			title: 'consectetur',
+			txt: 'Vivamus commodo ex et eleifend mollis. Ut in iaculis arcu. In in bibendum enim. Morbi eleifend fermentum turpis, nec dictum lectus condimentum eget. Quisque augue urna, sollicitudin at tempor et, molestie eget.'
 		},
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_4.jpg',
+			title: 'adipiscing',
+			txt: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec cursus lorem ut tellus blandit mattis. Vestibulum rutrum dolor nisl, in finibus magna consequat in. Suspendisse vitae eros.'
 		},
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_5.jpg',
+			title: 'elit',
+			txt: 'Phasellus malesuada posuere lorem, at malesuada risus consectetur eu. Integer justo elit, euismod nec ligula ac, mattis ultricies ipsum. Sed volutpat orci nec erat blandit placerat. Vestibulum fringilla consequat odio vel aliquet.'
 		}
 		,
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_6.jpg',
+			title: 'sed do',
+			txt: 'Nunc at erat faucibus, aliquet metus ut, tristique urna. Quisque viverra tellus at erat viverra sollicitudin. Sed pulvinar ipsum nulla, a efficitur justo pellentesque vitae. Curabitur sit amet risus eget dui dignissim.'
 		},
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_7.jpg',
+			title: 'eiusmod',
+			txt: 'Praesent interdum accumsan aliquet. In in ipsum consequat turpis accumsan vehicula. Quisque dignissim tempus ante vel tincidunt. Donec pharetra tellus dolor, vitae malesuada massa tempor quis. Pellentesque vestibulum egestas tellus ut pharetra.'
 		},
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_8.jpg',
+			title: 'incididunt',
+			txt: 'Fusce ultricies turpis sed libero gravida aliquam. Praesent accumsan sollicitudin libero, ac rhoncus nisl porta vitae. Aenean porta placerat nisl quis pretium. Etiam sit amet vulputate elit, eu varius mauris. Aenean pharetra.'
 		},
 		{
-			img: 'img/camada_landing_1-mobile.png',
-			title: 'LOREM IPSUM',
-			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+			img: 'img/camada_landing_9.jpg',
+			title: 'labore',
+			txt: 'Donec vel sodales neque. Aliquam id condimentum erat. Nullam laoreet turpis vitae felis laoreet, ut lobortis libero luctus. Suspendisse ut sapien condimentum, cursus lectus ut, sollicitudin sapien. Donec dignissim est at facilisis.'
 		}
 	],
 
 	setup: function(direction){
-
-		// if ( $(Slider.holder).hasClass('mobile') ) {
-		// 	return Slider.setupMobile(direction)
-		// }
-		
 
 		$.each(Slider.sliders, function(i,obj) {
 			var $clone = $('#'+Slider.elm).clone();
@@ -132,29 +127,31 @@ var Slider = {
 		})
 		
 		$('#'+Slider.elm).remove()
-		// console.log(clone)
-
-
-		// var activeSlides = $(Slider.holder).find('.active'),
-		// 	prev = parseInt(activeSlides[0].id.split('slider_')[1]),
-		// 	next = parseInt(activeSlides[2].id.split('slider_')[1]),
-		// 	newSlide;
-	
-		// if (direction === 'left' && prev !== 1) {
-		// 	newSlide = [prev-1, prev, prev+1];
-		// } else if(direction === 'right' && next !== Slider.total){
-		// 	newSlide = [next-1, next, next+1];
-		// } else {
-		// 	return false;
-		// }
-
-		// Slider.slide(newSlide)
+		
 		
 	},
-	init: function(){
+	init: function(direction){
+		if ( $(Slider.holder).hasClass('mobile') ) {
+			return Slider.initMobile(direction)
+		}
 
+
+		var activeSlides = $(Slider.holder).find('.active'),
+			prev = parseInt(activeSlides[0].id.split('slider_')[1]),
+			next = parseInt(activeSlides[2].id.split('slider_')[1]),
+			newSlide;
+	
+		if (direction === 'left' && prev !== 1) {
+			newSlide = [prev-1, prev, prev+1];
+		} else if(direction === 'right' && next !== Slider.total){
+			newSlide = [next-1, next, next+1];
+		} else {
+			return false;
+		}
+
+		Slider.slide(newSlide)
 	},
-	setupMobile: function(direction){
+	initMobile: function(direction){
 
 		var activeSlides = $(Slider.holder).find('.active'),
 			slide = parseInt(activeSlides[0].id.split('slider_')[1]),
@@ -200,11 +197,11 @@ $(document).ready(function(){
 		changeBackground(elm);
 	})
 
-	// $('[id^="arrow_slider-"]').on('click', function(ev) {
-	// 	var elm = $(this),
-	// 		direction = elm.attr('id').split('arrow_slider-')[1];
-	// 	Slider.setup(direction)
-	// });
+	$('[id^="arrow_slider-"]').on('click', function(ev) {
+		var elm = $(this),
+			direction = elm.attr('id').split('arrow_slider-')[1];
+		Slider.init(direction)
+	});
 
 	
 
