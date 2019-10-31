@@ -130,12 +130,10 @@ var Slider = {
 
 			$clone.appendTo(Slider.holder)
 		})
+		
 		$('#'+Slider.elm).remove()
 		// console.log(clone)
 
-		// for (var i = 0; i < Slider.total; i++) {
-		// 	$(Slider.holder).append(html)
-		// }
 
 		// var activeSlides = $(Slider.holder).find('.active'),
 		// 	prev = parseInt(activeSlides[0].id.split('slider_')[1]),
