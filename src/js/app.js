@@ -45,38 +45,116 @@ function switchAccordion(elm){
 function adjustMobile(){
 	$('#slider')
 		.find('#slider-container')
-		.addClass('mobile')
+			.addClass('mobile')
 		.find('.single-slider-container')
-		.removeClass('active')
-		.first().addClass('active')
+			.removeClass('active')
+		.first()
+			.addClass('active')
 }
 
 var Slider = {
 	total : 9,
 	elm: 'slider_',
 	holder: '#slider-container',
+	sliders: [
+		{
+			img: 'img/camada_landing_1.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_2.png',
+			title: 'BARILOCHE',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_3.png',
+			title: 'PRAIA DO ROSA',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		}
+		,
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		},
+		{
+			img: 'img/camada_landing_1-mobile.png',
+			title: 'LOREM IPSUM',
+			txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.'
+		}
+	],
 
 	setup: function(direction){
 
-		if ( $(Slider.holder).hasClass('mobile') ) {
-			return Slider.setupMobile(direction)
-		}
-
-		var activeSlides = $(Slider.holder).find('.active'),
-			prev = parseInt(activeSlides[0].id.split('slider_')[1]),
-			next = parseInt(activeSlides[2].id.split('slider_')[1]),
-			newSlide;
-	
-		if (direction === 'left' && prev !== 1) {
-			newSlide = [prev-1, prev, prev+1];
-		} else if(direction === 'right' && next !== Slider.total){
-			newSlide = [next-1, next, next+1];
-		} else {
-			return false;
-		}
-
-		Slider.slide(newSlide)
+		// if ( $(Slider.holder).hasClass('mobile') ) {
+		// 	return Slider.setupMobile(direction)
+		// }
 		
+
+		$.each(Slider.sliders, function(i,obj) {
+			var $clone = $('#'+Slider.elm).clone();
+
+			$clone
+				.attr('id', Slider.elm+i)
+				.find('img')
+					.attr('src', obj.img)
+				.next('.text-container')
+			 		.children('h2')
+			 		.text(obj.title)
+			 		.next('p')
+			 		.text(obj.txt);
+			if (i < 3) {
+				$clone.addClass('active')
+			}
+
+			$clone.appendTo(Slider.holder)
+		})
+		$('#'+Slider.elm).remove()
+		// console.log(clone)
+
+		// for (var i = 0; i < Slider.total; i++) {
+		// 	$(Slider.holder).append(html)
+		// }
+
+		// var activeSlides = $(Slider.holder).find('.active'),
+		// 	prev = parseInt(activeSlides[0].id.split('slider_')[1]),
+		// 	next = parseInt(activeSlides[2].id.split('slider_')[1]),
+		// 	newSlide;
+	
+		// if (direction === 'left' && prev !== 1) {
+		// 	newSlide = [prev-1, prev, prev+1];
+		// } else if(direction === 'right' && next !== Slider.total){
+		// 	newSlide = [next-1, next, next+1];
+		// } else {
+		// 	return false;
+		// }
+
+		// Slider.slide(newSlide)
+		
+	},
+	init: function(){
+
 	},
 	setupMobile: function(direction){
 
@@ -108,6 +186,8 @@ var Slider = {
 $(document).ready(function(){
 	console.log('im ready'); 
 	
+	Slider.setup()
+
 	var isMobile = ($(document).width() < 767) ? true : false;
 
 	if (isMobile) adjustMobile()
@@ -122,11 +202,13 @@ $(document).ready(function(){
 		changeBackground(elm);
 	})
 
-	$('[id^="arrow_slider-"]').on('click', function(ev) {
-		var elm = $(this),
-			direction = elm.attr('id').split('arrow_slider-')[1];
-		Slider.setup(direction)
-	});
+	// $('[id^="arrow_slider-"]').on('click', function(ev) {
+	// 	var elm = $(this),
+	// 		direction = elm.attr('id').split('arrow_slider-')[1];
+	// 	Slider.setup(direction)
+	// });
+
+	
 
 	$('.accordion-button').on('click', function(ev){
 		var elm = $(this);

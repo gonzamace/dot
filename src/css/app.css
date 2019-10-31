@@ -133,7 +133,8 @@ footer {
     display: inline-block;
 }
 #slider .single-slider-container img{
-	width: 85%;
+	width: 227px;
+	height: 151px;
 }
 #slider .single-slider-container .text-container{
 	width: 85%;
@@ -386,6 +387,7 @@ footer .footer-mask > p{
 	}
 	#slider .single-slider-container img{
 		width: 95%;
+		height: 95%;
 	}
 	#slider .single-slider-container{
 		width: 100%
