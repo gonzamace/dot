@@ -109,7 +109,7 @@ footer {
 	margin: 0 auto;
 }
 [id^=slide_] .text-container p{
-	overflow: scroll;
+	/*overflow: scroll;*/
 	height: 150px;
 	font-size: 16px;
     line-height: 1.2em;
