@@ -2,11 +2,11 @@ function scrollToElement(el){
     $(el).get(0).scrollIntoView();
 }
 
-function changeBackground(elm){
+function changeBackground($elm){
 	var elmLand = $('#landing'),
 		elmPort = $('#landing .container'),
 		isLand = ($(document).width() > 767) ? true : false,
-		img = elm.attr('id'),
+		img = $elm.attr('id'),
 		dots = img.split('_')[0],
 		size;
 
@@ -24,50 +24,40 @@ function changeBackground(elm){
     	})
 	}
 
-	elm.addClass('active')
+	$elm.addClass('active')
     
 }
 
-function switchAccordion(elm){
+function switchAccordion($elm){
 
-	if (elm.hasClass('active')){
-		
-		elm.removeClass('active')
-
-		if (elm.hasClass('last')) {
-			elm
+	if ($elm.hasClass('active')){
+		$elm.removeClass('active')
+		if ($elm.hasClass('last')) {
+			$elm
 				.removeClass('default-border')
 				.next()
 				.removeClass('radius-border')
 		}
 
 	} else {
+
 		$('.accordion-button').removeClass('active');
-		if (elm.hasClass('last')) {
-			elm
+
+		if ($elm.hasClass('last')) {
+			$elm
 				.addClass('default-border')
 				.next()
 				.addClass('radius-border')
 		}
-		elm.addClass('active')
+		$elm.addClass('active')
 	}
 
-	var $container = elm.closest('.container')
+	var $container = $elm.closest('.container')
 	if (!$container.find('.active').length) {
 		$container.addClass('all-close')
 	} else {
 		$container.removeClass('all-close')
 	}
-}
-
-function adjustMobile(){
-	$('#slider')
-		.find('#slider-container')
-			.addClass('mobile')
-		.find('.single-slider-container')
-			.removeClass('active')
-		.first()
-			.addClass('active')
 }
 
 var Slider = {
@@ -137,15 +127,16 @@ var Slider = {
 			 		.text(obj.title)
 			 		.next()
 			 		.text(obj.txt);
-			if (i < 3) {
-				$clone.addClass('active')
-			}
+			// if (i < 3) {
+			// 	$clone.addClass('active')
+			// }
 
 			$clone.appendTo(Slider.holder)
 		})
 		
 		$('#'+Slider.elm).remove()
 		
+		Slider.adjustViewport()
 	},
 
 	init: function(direction){
@@ -168,6 +159,7 @@ var Slider = {
 
 		Slider.slide(newSlide)
 	},
+
 	initMobile: function(direction){
 
 		var activeSlides = $(Slider.holder).find('.active'),
@@ -192,26 +184,48 @@ var Slider = {
 		for (var i = 0; i < newSlide.length; i++) {
 			$('#'+Slider.elm+newSlide[i]).addClass('active')
 		}	
+	},
+
+	adjustViewport: function(){
+		var _isMobile = ($(document).width() < 767) ? true : false;
+
+		if (_isMobile) {
+			$(Slider.holder)
+				.addClass('mobile')
+				.find('.single-slider-container')
+					.removeClass('active')
+				.first()
+					.addClass('active')
+				
+		} else {
+			$(Slider.holder)
+				.removeClass('mobile')
+				.find('.single-slider-container')
+					.removeClass('active')
+				.nextAll(':lt(3)') 
+					.addClass('active')
+		}
 	}	
 }
 
+$(window).on('resize', function(){
+
+	Slider.adjustViewport()
+
+});
+
 $(document).ready(function(){
-	console.log('im ready'); 
+	console.log('im ready to go'); 
 	
 	Slider.setup()
-
-	var isMobile = ($(document).width() < 767) ? true : false;
-
-	if (isMobile) adjustMobile()
-
 
 	$('#landing_arrow').on('click', function(ev){
 		scrollToElement('#slider', 1000);
 	})
 
 	$('.dot').on('click', function(ev){
-		var elm = $(this);
-		changeBackground(elm);
+		var $elm = $(this);
+		changeBackground($elm);
 	})
 
 	$('[id^="arrow_slider-"]').on('click', function(ev) {

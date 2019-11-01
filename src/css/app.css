@@ -395,17 +395,16 @@ footer .footer-mask > p{
 		height:480px;
 	}
 	#slider .container{
-		min-width: 95%;
-		max-width: 95%;
     	height: 460px;
     	padding: 20px 10px;
 	}
 	#slider-container{
-	    width: 100%;
+        min-width: 330px;
+    	max-width: 767px;
     	height: 440px;
 	}
 	#slider .container .arrow-slider{
-		top: 84%;
+		top: 92%;
 	}
 	#arrow_slider-left{
 		left:33%;
@@ -427,6 +426,7 @@ footer .footer-mask > p{
 	}
 	.container{
 		width: 95%;
+		padding: 24px 10px;
 	}
 	.col-one {
 	    display: block;    
@@ -435,23 +435,31 @@ footer .footer-mask > p{
 	    display: -block;
 	    float: none;
 	}
+
+	#description{
+		height: 950px;
+	}
 	#description .col-one {
-	    width: 95%;
+	    width: 100%;
 	    text-align: center;
+	    margin: 0 auto;
 	}
 	#description .col-one img {
 	    width: 87%;
+	    height: auto;
 	}
 	#description .col-two {
-	    width: 95%;
+	    width: 100%;
 	    text-align: center;
 	}
 	#description .col-two > p:nth-child(3){
 		font-weight: bold;
 		font-size: 1em;
 	}
+
 	#accordeon{
-		height: inherit;
+		min-height: 650px;
+		max-height: 680px;
 	}
 	#accordeon .panel .col-two{
 		display: block;
@@ -470,6 +478,7 @@ footer .footer-mask > p{
 	    width: 85%;
 	    display: inline-block;
 	}
+
 	#form .input-container:nth-child(2), #form .input-container:nth-child(3){
 		display: block;
 		width: 100%;
