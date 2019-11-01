@@ -29,16 +29,34 @@ function changeBackground(elm){
 }
 
 function switchAccordion(elm){
+
 	if (elm.hasClass('active')){
 		
 		elm.removeClass('active')
-		if (elm.hasClass('last'))elm.removeClass('default-border')
+
+		if (elm.hasClass('last')) {
+			elm
+				.removeClass('default-border')
+				.next()
+				.removeClass('radius-border')
+		}
 
 	} else {
-		
 		$('.accordion-button').removeClass('active');
-		if (elm.hasClass('last')) elm.addClass('default-border') 
+		if (elm.hasClass('last')) {
+			elm
+				.addClass('default-border')
+				.next()
+				.addClass('radius-border')
+		}
 		elm.addClass('active')
+	}
+
+	var $container = elm.closest('.container')
+	if (!$container.find('.active').length) {
+		$container.addClass('all-close')
+	} else {
+		$container.removeClass('all-close')
 	}
 }
 
@@ -54,7 +72,7 @@ function adjustMobile(){
 
 var Slider = {
 	total : 9,
-	elm: 'slider_',
+	elm: 'slide_',
 	holder: '#slider-container',
 	sliders: [
 		{
@@ -114,10 +132,10 @@ var Slider = {
 				.attr('id', Slider.elm+i)
 				.find('img')
 					.attr('src', obj.img)
-				.next('.text-container')
-			 		.children('h2')
+				.next()
+			 		.children()
 			 		.text(obj.title)
-			 		.next('p')
+			 		.next()
 			 		.text(obj.txt);
 			if (i < 3) {
 				$clone.addClass('active')
@@ -128,22 +146,21 @@ var Slider = {
 		
 		$('#'+Slider.elm).remove()
 		
-		
 	},
+
 	init: function(direction){
 		if ( $(Slider.holder).hasClass('mobile') ) {
 			return Slider.initMobile(direction)
 		}
 
-
 		var activeSlides = $(Slider.holder).find('.active'),
-			prev = parseInt(activeSlides[0].id.split('slider_')[1]),
-			next = parseInt(activeSlides[2].id.split('slider_')[1]),
+			prev = parseInt(activeSlides[0].id.split(Slider.elm)[1]),
+			next = parseInt(activeSlides[2].id.split(Slider.elm)[1]),
 			newSlide;
 	
-		if (direction === 'left' && prev !== 1) {
+		if (direction === 'left' && prev !== 0) {
 			newSlide = [prev-1, prev, prev+1];
-		} else if(direction === 'right' && next !== Slider.total){
+		} else if(direction === 'right' && next !== Slider.sliders.length - 1){
 			newSlide = [next-1, next, next+1];
 		} else {
 			return false;
@@ -154,12 +171,12 @@ var Slider = {
 	initMobile: function(direction){
 
 		var activeSlides = $(Slider.holder).find('.active'),
-			slide = parseInt(activeSlides[0].id.split('slider_')[1]),
+			slide = parseInt(activeSlides[0].id.split(Slider.elm)[1]),
 			newSlide;
 
-		if (direction === 'left' && slide !== 1) {
+		if (direction === 'left' && slide !== 0) {
 			newSlide = [slide-1];
-		} else if(direction === 'right' && slide !== Slider.total){
+		} else if(direction === 'right' && slide !== Slider.sliders.length - 1){
 			newSlide = [slide+1];
 		} else {
 			return false;
@@ -167,11 +184,11 @@ var Slider = {
 
 		Slider.slide(newSlide)
 	},
+
 	slide: function(newSlide){
 		$(Slider.holder)
 			.find('[id^="'+Slider.elm+'"]')
 			.removeClass('active')
-
 		for (var i = 0; i < newSlide.length; i++) {
 			$('#'+Slider.elm+newSlide[i]).addClass('active')
 		}	
@@ -203,7 +220,6 @@ $(document).ready(function(){
 		Slider.init(direction)
 	});
 
-	
 
 	$('.accordion-button').on('click', function(ev){
 		var elm = $(this);
