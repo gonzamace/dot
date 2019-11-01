@@ -1,5 +1,5 @@
 function scrollToElement(el){
-    $(el).get(0).scrollIntoView();
+    $(el).get(0).scrollIntoView({ block: 'start',  behavior: 'smooth' });
 }
 
 function changeBackground($elm){
