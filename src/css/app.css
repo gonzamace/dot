@@ -9,24 +9,8 @@ footer {
 	text-align: center;
 	color: #fff;
 }
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 44px 10px
-}
-.col-one {
-    display: inline-block;
-    /*margin: 0 auto;*/
-    padding: 5px;
-    
-}
-.col-two {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 5px;
-    
-    float: right;
-}
+
+/****************************** LANDING *****************************/
 
 #landing{
 	height: 100vh;
@@ -94,12 +78,14 @@ footer {
 	background-color: #546130;
 	border-color:#ffffff; 
 }
+
+/****************************** SLIDER *****************************/
+
 #slider{
 	position: relative;
 	background-color: rgb(69, 69, 69);
 	height: 500px;
 }
-
 #slider .container{
 	text-align: center;
 	position: relative;
@@ -111,7 +97,6 @@ footer {
     margin:0 auto;
     position: relative;
 }
-
 [id^=slide_] {
 	width: 33%;
     display: none;
@@ -119,14 +104,6 @@ footer {
 [id^=slide_].active {
 	display: inline-block;
 }
-
-[id^=slide_] img{
-	width: 300px;
-	height: 200px;
-	z-index: 24;
-	border: 10px solid #6d6d6d;
-}
-
 [id^=slide_] .text-container{
 	width: 85%;
 	margin: 0 auto;
@@ -137,7 +114,6 @@ footer {
 	font-size: 16px;
     line-height: 1.2em;
 }
-
 [id^=slide_] .text-container h2{
 	margin: 10px 0px;
 	text-transform: uppercase;
@@ -154,9 +130,12 @@ footer {
 	right: -50px;
 }
 
+/****************************** DESCRIPTION *****************************/
+
 #description{
 	background-color: rgb(111, 111, 111);
 	height: 500px;
+	position: relative;
 }
 
 #description .col-one{
@@ -166,8 +145,17 @@ footer {
 	padding: 0;
 }
 #description .col-two{
-	padding: 0;
-	width: 50%;
+	position: absolute;
+    top: 50%;
+    padding-left: 70px;
+    width: 600px;
+    margin: 0 auto;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#description .col-two > p:nth-child(3){
+	font-weight: bold;
+	font-size: 1em;
 }
 #description img{
 	border: 20px solid #343434;
@@ -179,6 +167,8 @@ footer {
     font-size: .9em;
     line-height: 1.3em;
 }
+
+/****************************** ACCORDION *****************************/
 
 #accordeon{
 	position: relative;
@@ -208,7 +198,9 @@ footer {
     border-bottom-right-radius: 10px;
 }
 #accordeon .accordion-button > .col-one {
-    font-weight: 800;
+    font-size: 24px;
+	font-weight: bold;
+  	line-height: 1.2;
 }
 #accordeon .accordion-button:nth-child(1){
     border-top-left-radius: 10px;
@@ -234,32 +226,46 @@ footer {
     margin: 5px;
     padding: 0px;
 }
-
 #accordeon .accordion-button.active > .col-two {
     background: url(../../img/arrow_up_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center ;
 }
 
 #accordeon .panel {
 	display: none;
-	/*opacity: 0;*/
+	padding: 10px;
 	background: #ffffff;
-	padding: 0px 10px;
 	position: relative;
 	margin-top: -1px;
 }
 #accordeon .accordion-button.active + .panel{
 	display: block;
 }
-#accordeon .panel .col-two{
-	padding-left: 20px;
-	position: absolute;
-	top: 30%;
-	width: 60%;
-	float: none;
-	color: #6e6e6e;
+.recuadro-img{
+	width: 300px;
+  	height: 200px;
+	border: 10px solid #6d6d6d;
 }
+
+#accordeon .panel .col-one{
+	padding: 0;
+}
+
+#accordeon .panel .col-two{
+    font-size: 16px;
+    color: #6e6e6e;
+    position: absolute;
+    top: 50%;
+    padding-left: 20px;
+    width: 700px;
+    margin: 0 auto;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/****************************** FORM *****************************/
 
 #form{
 	height: 500px;
@@ -345,6 +351,24 @@ footer .footer-mask > p{
 	top: 50%;
 	transform: translateY(-50%);
 }
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 44px 10px
+}
+.col-one {
+    display: inline-block;
+    padding: 5px;
+    
+}
+.col-two {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 5px;
+    
+    float: right;
+}
+
 @media only screen and (max-width: 767px) {
 	#landing .container{
 		padding-top: 15px;
@@ -437,7 +461,7 @@ footer .footer-mask > p{
 	}
 
 	#description{
-		height: 950px;
+		height: 900px;
 	}
 	#description .col-one {
 	    width: 100%;
@@ -451,6 +475,9 @@ footer .footer-mask > p{
 	#description .col-two {
 	    width: 100%;
 	    text-align: center;
+        transform: none;
+	    padding: 0;
+	    position: relative;
 	}
 	#description .col-two > p:nth-child(3){
 		font-weight: bold;
@@ -459,14 +486,17 @@ footer .footer-mask > p{
 
 	#accordeon{
 		min-height: 650px;
-		max-height: 680px;
+		max-height: 700px;
 	}
 	#accordeon .panel .col-two{
 		display: block;
 	    position: relative;
 	    padding: 10px;
-	    width: 90%;
+	    width: 95%;
 	    text-align: justify;
+	    transform: none;
+	    padding: 10px;
+	    position: relative;
 	}
 	#accordeon .panel .col-one{
 	    text-align: center;
@@ -479,12 +509,16 @@ footer .footer-mask > p{
 	    display: inline-block;
 	}
 
+	#form{
+		height:500px;
+	}
 	#form .input-container:nth-child(2), #form .input-container:nth-child(3){
 		display: block;
 		width: 100%;
 	}
 	#form .input-container:nth-child(4){
 		margin-top: 90px;
+    	margin-bottom: 10px;
 	}
 	#form .input-style{
 		    max-width: 180px;
