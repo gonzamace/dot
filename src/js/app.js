@@ -61,7 +61,6 @@ function switchAccordion($elm){
 }
 
 var Slider = {
-	total : 9,
 	elm: 'slide_',
 	holder: '#slider-container',
 	sliders: [
@@ -116,6 +115,7 @@ var Slider = {
 	setup: function(direction){
 
 		$.each(Slider.sliders, function(i,obj) {
+
 			var $clone = $('#'+Slider.elm).clone();
 
 			$clone
@@ -127,10 +127,7 @@ var Slider = {
 			 		.text(obj.title)
 			 		.next()
 			 		.text(obj.txt);
-			// if (i < 3) {
-			// 	$clone.addClass('active')
-			// }
-
+			
 			$clone.appendTo(Slider.holder)
 		})
 		
