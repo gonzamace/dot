@@ -146,13 +146,13 @@ var Accordion = {
 			$elm.addClass('active')
 		}
 
-		var $container = $elm.closest('#accordion-container')
+		// var $container = $elm.closest('#accordion-container')
 
-		if (!$container.find('.active').length) {
-			$container.addClass('all-close')
-		} else {
-			$container.removeClass('all-close')
-		}
+		// if (!$container.find('.active').length) {
+		// 	$container.addClass('all-close')
+		// } else {
+		// 	$container.removeClass('all-close')
+		// }
 	}
 
 }
