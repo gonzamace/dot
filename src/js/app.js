@@ -12,10 +12,6 @@ var Dot = {
 
 	setup: function(data, callback){
 
-		var _isMobile = this.isMobile();
-
-		console.log(_isMobile)
-
 		for (var i = 0; i < data.length; i++) {
 
 			$.each(data[i].data, function(id, obj) {
@@ -143,83 +139,42 @@ var Slider = {
 	
 	sliders: sliders,
 
-	// status: {
-	// 	activeSlides: $(Slider.sliders.holder).find('.active')
-	// },
-
-	// init: function(direction){
-	// 	if ( $(Slider.sliders.holder).hasClass('mobile') ) {
-	// 		return this.initMobile(direction)
-	// 	}
-
-	// 	var activeSlides = $(Slider.sliders.holder).find('.active'),
-	// 		prev = parseInt(activeSlides[0].id.split(Slider.sliders.elm)[1]),
-	// 		next = parseInt(activeSlides[2].id.split(Slider.sliders.elm)[1]),
-	// 		newSlide;
-		
-	// 	if (direction === 'left' && prev !== 0) {
-	// 		newSlide = [prev-1, prev, prev+1];
-	// 	} else if(direction === 'right' && next !== Slider.sliders.data.length - 1){
-	// 		newSlide = [next-1, next, next+1];
-	// 	} else {
-	// 		return false;
-	// 	}
-
-	// 	Slider.slide(newSlide)
-	// },
-
-	// initMobile: function(direction){
-
-	// 	var activeSlides = $(Slider.sliders.holder).find('.active'),
-	// 		slide = parseInt(activeSlides[0].id.split(Slider.elm)[1]),
-	// 		newSlide;
-
-	// 	if (direction === 'left' && slide !== 0) {
-	// 		newSlide = [slide-1];
-	// 	} else if(direction === 'right' && slide !== Slider.sliders.length - 1){
-	// 		newSlide = [slide+1];
-	// 	} else {
-	// 		return false;
-	// 	}
-
-	// 	Slider.slide(newSlide)
-	// },
-
 	slide: function(direction){
 
-		var activeSlides, 
+		var $activeSlides, 
 			prev, 
 			next, 
 			newSlides,
 			_isMobile = Dot.isMobile();
 
-		activeSlides = $(Slider.sliders.holder).find('.active');
-
-		console.log(direction)
-		console.log(activeSlides[0].id.split(Slider.sliders.elm)[1])
-
+		$activeSlides = $(Slider.sliders.holder).find('.active');
 
 		if ( _isMobile ) {
-			prev = parseInt(activeSlides[0].id.split(Slider.sliders.elm)[1])-1;
-			next = parseInt(activeSlides[0].id.split(Slider.sliders.elm)[1])+1;
+			prev = parseInt($activeSlides.get(0).id.split(Slider.sliders.elm)[1])-1;
+			next = prev+2;
+			if (direction === 'left' && prev > -1) {
+				newSlides = [prev];
+			} else if (direction === 'right' && next < Slider.sliders.data.length ){
+				newSlides = [next];
+			} else {
+				return false;
+			}
 		} else {
-			prev = parseInt(activeSlides[0].id.split(Slider.sliders.elm)[1]);
-			next = parseInt(activeSlides[2].id.split(Slider.sliders.elm)[1]);
-			console.log(prev, next)
-		}
-
-
-		if (direction === 'left' && prev > -1) {
-			newSlides = [prev];
-		} else if (direction === 'right' && next < Slider.sliders.data.length - 1){
-			newSlides = [next];
-		} else {
-			return false;
+			prev = parseInt($activeSlides.get(0).id.split(Slider.sliders.elm)[1]);
+			next = parseInt($activeSlides.get(2).id.split(Slider.sliders.elm)[1]);
+			if (direction === 'left' && prev > 0) {
+				newSlides = [prev-1, prev, prev+1];
+			} else if (direction === 'right' && next < Slider.sliders.data.length - 1 ){
+				newSlides = [next-1, next, next+1];
+			} else {
+				return false;
+			}
 		}
 
 		$(Slider.sliders.holder)
-			.find('[id^="'+Slider.sliders.elm+'"]')
+			.children('.single-slider-container')
 			.removeClass('active')
+
 		for (var i = 0; i < newSlides.length; i++) {
 			$('#'+Slider.sliders.elm+newSlides[i]).addClass('active')
 		}	
