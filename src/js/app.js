@@ -143,9 +143,9 @@ var Slider = {
 	
 	sliders: sliders,
 
-	status: {
-		activeSlides: $(Slider.sliders.holder).find('.active')
-	},
+	// status: {
+	// 	activeSlides: $(Slider.sliders.holder).find('.active')
+	// },
 
 	// init: function(direction){
 	// 	if ( $(Slider.sliders.holder).hasClass('mobile') ) {
