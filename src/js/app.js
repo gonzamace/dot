@@ -137,24 +137,18 @@ var Accordion = {
 
 			$('.accordion-button').removeClass('active');
 
+			$elm.addClass('active')
+
 			if ($elm.hasClass('last')) {
 				$elm
 					.removeClass('radius-border-bottom')
 					.next()
 					.addClass('radius-border-bottom')
 			} else {
-
+				console.log('aqui')
+				$('.accordion-button.last').addClass('radius-border-bottom')
 			}
-			$elm.addClass('active')
 		}
-
-		// var $container = $elm.closest('#accordion-container')
-
-		// if (!$container.find('.active').length) {
-		// 	$container.addClass('all-close')
-		// } else {
-		// 	$container.removeClass('all-close')
-		// }
 	}
 
 }
