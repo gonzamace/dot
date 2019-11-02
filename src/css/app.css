@@ -120,7 +120,7 @@ footer {
 }
 #slider .arrow-slider{
     position: absolute;
-    top: 33%;
+    top: 25%;
     cursor: pointer;
 }
 #arrow_slider-left{
@@ -170,19 +170,19 @@ footer {
 
 /****************************** ACCORDION *****************************/
 
-#accordeon{
+#accordion{
 	position: relative;
 	min-height: 500px;
 	max-height: 630px;
 	background-color: #bebebe;
 }
-#accordeon .all-close{
+#accordion .all-close{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-#accordeon .accordion-button{
+#accordion .accordion-button{
 	background-color: #6e6e6e;
     padding: 20px;
     height: 30px;
@@ -197,26 +197,26 @@ footer {
 	border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-#accordeon .accordion-button > .col-one {
+#accordion .accordion-button > .col-one {
     font-size: 24px;
 	font-weight: bold;
   	line-height: 1.2;
 }
-#accordeon .accordion-button:nth-child(1){
+#accordion .accordion-button:nth-child(1){
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-#accordeon .accordion-button:nth-child(7){
+#accordion .accordion-button:nth-child(7){
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-#accordeon .accordion-button.active{
+#accordion .accordion-button.active{
 	background-color: #ffffff;
 	color: #6e6e6e;
 }
 
-#accordeon .accordion-button > .col-two {
+#accordion .accordion-button > .col-two {
     background: url(../../img/arrow_down_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -226,21 +226,21 @@ footer {
     margin: 5px;
     padding: 0px;
 }
-#accordeon .accordion-button.active > .col-two {
+#accordion .accordion-button.active > .col-two {
     background: url(../../img/arrow_up_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center ;
 }
 
-#accordeon .panel {
+#accordion .panel {
 	display: none;
 	padding: 10px;
 	background: #ffffff;
 	position: relative;
 	margin-top: -1px;
 }
-#accordeon .accordion-button.active + .panel{
+#accordion .accordion-button.active + .panel{
 	display: block;
 }
 .recuadro-img{
@@ -249,11 +249,11 @@ footer {
 	border: 10px solid #6d6d6d;
 }
 
-#accordeon .panel .col-one{
+#accordion .panel .col-one{
 	padding: 0;
 }
 
-#accordeon .panel .col-two{
+#accordion .panel .col-two{
     font-size: 16px;
     color: #6e6e6e;
     position: absolute;
