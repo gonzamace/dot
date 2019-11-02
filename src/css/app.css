@@ -170,17 +170,15 @@ footer {
 
 /****************************** ACCORDION *****************************/
 
-#accordion{
-	position: relative;
+section#accordion{
 	min-height: 500px;
 	max-height: 630px;
 	background-color: #bebebe;
 }
-#accordion .all-close{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+#accordion > .container{
+	position: relative;
+    min-height: 500px;
+    max-height: 630px;
 }
 #accordion .accordion-button{
 	background-color: #6e6e6e;
@@ -189,34 +187,14 @@ footer {
     cursor: pointer;
     margin-top: 1px;
 }
-.default-border{
-	border-bottom-left-radius: 0px !important;
-	border-bottom-right-radius: 0px !important;
-}
-.radius-border{
-	border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-#accordion .accordion-button > .col-one {
+#accordion .accordion-button > h2 {
     font-size: 24px;
 	font-weight: bold;
   	line-height: 1.2;
+  	margin: 0;
+  	text-transform: uppercase;
 }
-#accordion .accordion-button:nth-child(1){
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-#accordion .accordion-button:nth-child(7){
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-#accordion .accordion-button.active{
-	background-color: #ffffff;
-	color: #6e6e6e;
-}
-
-#accordion .accordion-button > .col-two {
+#accordion .accordion-button > .col-two { 
     background: url(../../img/arrow_down_accordion.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -226,12 +204,6 @@ footer {
     margin: 5px;
     padding: 0px;
 }
-#accordion .accordion-button.active > .col-two {
-    background: url(../../img/arrow_up_accordion.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center ;
-}
 
 #accordion .panel {
 	display: none;
@@ -240,29 +212,53 @@ footer {
 	position: relative;
 	margin-top: -1px;
 }
-#accordion .accordion-button.active + .panel{
-	display: block;
-}
-.recuadro-img{
-	width: 300px;
-  	height: 200px;
-	border: 10px solid #6d6d6d;
-}
-
 #accordion .panel .col-one{
-	padding: 0;
+	padding: 10px;
 }
-
 #accordion .panel .col-two{
     font-size: 16px;
     color: #6e6e6e;
     position: absolute;
     top: 50%;
     padding-left: 20px;
-    width: 700px;
+    width: 60%;
     margin: 0 auto;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+#accordion .accordion-button.active + .panel{
+	display: block;
+}
+
+#accordion-container.all-close{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%
+}
+.default-border{
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+.radius-border-bottom{
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.radius-border-top{
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#accordion .accordion-button.active{
+	background-color: #ffffff;
+	color: #6e6e6e;
+}
+
+#accordion .accordion-button.active > .col-two {
+    background: url(../../img/arrow_up_accordion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ;
 }
 
 /****************************** FORM *****************************/
@@ -343,6 +339,8 @@ footer {
 	top:1px;
 }
 
+/****************************** GENERAL *****************************/
+
 footer .footer-mask{
 	position: relative;
 }
@@ -368,7 +366,11 @@ footer .footer-mask > p{
     
     float: right;
 }
-
+.recuadro-img{
+	width: 300px;
+  	height: 200px;
+	border: 10px solid #6d6d6d;
+}
 @media only screen and (max-width: 767px) {
 	#landing .container{
 		padding-top: 15px;
@@ -483,32 +485,60 @@ footer .footer-mask > p{
 		font-weight: bold;
 		font-size: 1em;
 	}
+.Lorem_ipsum {
+  font-size: 18px;
+  font-family: "Roboto";
+  color: rgb(111, 111, 111);
+  font-weight: bold;
+  line-height: 1.2;
+  position: absolute;
+  left: 19.73px;
+  top: 1962.89px;
+  width: 105px;
+  height: 18px;
+  z-index: 37;
+}
 
-	#accordeon{
-		min-height: 650px;
+	section#accordion{
+		min-height: 500px;
 		max-height: 700px;
 	}
-	#accordeon .panel .col-two{
-		display: block;
-	    position: relative;
-	    padding: 10px;
-	    width: 95%;
-	    text-align: justify;
-	    transform: none;
-	    padding: 10px;
-	    position: relative;
+	#accordion .accordion-button {
+		padding: 10px;
 	}
-	#accordeon .panel .col-one{
-	    text-align: center;
-	}
-	#accordeon .accordion-button>.col-one{
+	#accordion .accordion-button > h2{
+		font-size: 18px;
 	    position: relative;
 	    top: 20%;
 	    transform: translateY(-50%);
 	    width: 85%;
 	    display: inline-block;
 	}
+	
+	#accordion .panel .col-one{
+	    text-align: center;
+	    padding: 0;
+	}
+	#accordion .panel .col-two{
+		display: block;
+	    position: relative;
+	    padding: 10px;
+	    width: 95%;
+	    text-align: center;
+	    transform: none;
+	    padding: 0px;
+	    position: relative;
+	}
+	#accordion-container.all-close{
+		width: 95%;
+	}
 
+	#form .input-container>label{
+		font-size: 18px;	
+		font-weight: bold;
+  		line-height: 1.2;
+	}
+	
 	#form{
 		height:500px;
 	}

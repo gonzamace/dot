@@ -17,8 +17,8 @@ var Dot = {
 			$.each(data[i].data, function(id, obj) {
 
 				var $clone = $('#'+data[i].elm)
-											.clone()
-											.attr('id', data[i].elm+id);
+								.clone()
+								.attr('id', data[i].elm+id);
 				$clone
 					.find('img')
 					.attr('src', obj.img)
@@ -38,7 +38,7 @@ var Dot = {
 	  	if (typeof callback === 'function') {
 	        callback.call(this);
 	    }
-		
+
 		this.adjustViewport()
 	},
 
@@ -80,17 +80,34 @@ var Dot = {
 			
 			$(Slider.sliders.holder)
 				.find('.single-slider-container')
-					.removeClass('active')
+				.removeClass('active')
 				.first()
-					.addClass('active')
+				.addClass('active')
 				
-		} else {
+		} else { //Desktop
+
 			$(Slider.sliders.holder)
 				.children('.single-slider-container')
 				.removeClass('active')
 				.slice(0,3)
-				.addClass('active') 
+				.addClass('active')
 		}
+
+		$(Accordion.accordions.holder)
+			.find('.accordion-button')
+			.eq(2)
+			.addClass('active')
+
+		$(Accordion.accordions.holder)
+			.find('.accordion-button')
+			.first()
+			.addClass('radius-border-top')
+
+		$(Accordion.accordions.holder)
+			.find('.accordion-button')
+			.last()
+			.addClass('radius-border-bottom last')
+
 	},
 	
 	_isMobile: function(){
@@ -102,13 +119,16 @@ var Accordion = {
 	accordions: accordions,
 
 	switch: function($elm){
+
 		if ($elm.hasClass('active')){
+
 			$elm.removeClass('active')
+
 			if ($elm.hasClass('last')) {
 				$elm
-					.removeClass('default-border')
+					.addClass('radius-border-bottom')
 					.next()
-					.removeClass('radius-border')
+					.removeClass('radius-border-bottom')
 			}
 
 		} else {
@@ -117,14 +137,16 @@ var Accordion = {
 
 			if ($elm.hasClass('last')) {
 				$elm
-					.addClass('default-border')
+					.removeClass('radius-border-bottom')
 					.next()
-					.addClass('radius-border')
+					.addClass('radius-border-bottom')
+			} else {
+
 			}
 			$elm.addClass('active')
 		}
 
-		var $container = $elm.closest('.container')
+		var $container = $elm.closest('#accordion-container')
 
 		if (!$container.find('.active').length) {
 			$container.addClass('all-close')
