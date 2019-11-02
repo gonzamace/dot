@@ -129,7 +129,7 @@ var Accordion = {
 		}
 
 		var $container = $elm.closest('.container')
-		
+
 		if (!$container.find('.active').length) {
 			$container.addClass('all-close')
 		} else {
@@ -145,7 +145,7 @@ var Slider = {
 
 	status: {
 		activeSlides: $(Slider.sliders.holder).find('.active')
-	}
+	},
 
 	// init: function(direction){
 	// 	if ( $(Slider.sliders.holder).hasClass('mobile') ) {
