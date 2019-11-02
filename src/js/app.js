@@ -93,6 +93,17 @@ var Dot = {
 				.addClass('active')
 		}
 
+	},
+	
+	_isMobile: function(){
+		return $('body').hasClass('mobile');
+	}
+}
+
+var Accordion = {
+	accordions: accordions,
+
+	setup: function() {
 		$(Accordion.accordions.holder)
 			.find('.accordion-button')
 			.eq(2)
@@ -107,16 +118,7 @@ var Dot = {
 			.find('.accordion-button')
 			.last()
 			.addClass('radius-border-bottom last')
-
 	},
-	
-	_isMobile: function(){
-		return $('body').hasClass('mobile');
-	}
-}
-
-var Accordion = {
-	accordions: accordions,
 
 	switch: function($elm){
 
@@ -212,7 +214,7 @@ $(window).on('resize', function(){
 $(document).ready(function(){
 	console.log('im ready to go'); 
 
-	Dot.setup([Slider.sliders, Accordion.accordions])
+	Dot.setup([Slider.sliders, Accordion.accordions], Accordion.setup)
 
 	$('#landing_arrow').on('click', function(ev){
 		Dot.scrollToElement('#slider');
