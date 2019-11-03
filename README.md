@@ -1,29 +1,19 @@
 # dot
 
-Desenvolver o front-end dos arquivos PSD disponível no link;
-O resultado deve ser responsivo e a versão mobile deve condizer com o arquivo PSD mobile;
-O código deve estar semanticamente correto, bem organizado e estruturado.
-Observações:
+Mobile responsive
+Only jQuery;
+No CSS framework or pre-processors.
+No JavaScript framework.
+No Angular, Bootstrap, React, Vue, etc.
+Use task automator (gulp).
+Compatible version with all browsers including IE 9.
 
-É permitido utilizar jQuery;
-Não é permitido utilizar framework e pré processadores CSS;
-Não é permitido utilizar framework JavaScript;
-Não é permitido utilizar Angular, Bootstrap, React, Vue, etc;
-O conteúdo final deve ser funcional na última e penúltima versão dos principais navegadores, e também com a versão 9 do navegador Internet Explorer.
-Funcionalidades:
+Functionalities:
 
-Ao clicar na seta do topo a tela deve rolar até a segunda seção (com fundo cinza escuro e slider com as imagens e textos);
-O topo deve conter um slider, onde, ao clicar em uma das três bolinhas, a imagem de fundo do topo é trocada e a bolinha clicada deve ficar em destaque;
-Na segunda seção (fundo cinza escuro com imagens e textos) deve existir um slider, contendo um total de 9 elementos (imagens e textos), sendo que são mostrados apenas 3 elementos por vez na tela;
-Na terceira seção (fundo cinza com imagem redonda e texto) o texto deve estar alinhado verticalmente com relação à imagem;
-Na quarta seção (fundo cinza claro) deve existir um recurso accordion, onde inicialmente todos os elementos aparecem fechados e ao clicar em um dos elementos ele expande e é mostrado seu conteúdo, conforme o item com fundo branco. Deve-se abrir apenas um elemento por vez, ou seja, ao clicar em um elemento, os demais devem ser recolhidos. O elemento clicado deve ter suas cores trocadas e a seta deve mudar de direção (conforme layout);
-Na quinta seção (formulário) o fundo deve conter duas cores divididas por uma forma triangular. O formulário de contato deve conter máscaras e ser validado ao clicar no botão "enviar";
-No rodapé deve constar o texto centralizado.
-Diferencial:
-
-Efeitos animados nos elementos interativos;
-Utilizar automatizador de tarefa (gulp).
-Envio:
-
-Você deverá responder essa questão com um único link de acesso para uma pasta contendo os arquivos da sua entrega.
-Acesse o link para consultar o material de apoio:
+By clicking on the top arrow the screen should scroll to the second section (with dark gray background and slider with images and text);
+The top should contain a slider, where clicking on one of the three balls will change the background image of the top and the clicked ball should be highlighted;
+In the second section (dark gray background with images and text) there should be a slider, containing a total of 9 elements (images and text), with only 3 elements being shown on the screen at a time;
+In the third section (gray background with round image and text) the text should be vertically aligned with the image;
+In the fourth section (light gray background) there should be an accordion feature, where initially all elements appear closed and when clicking on one of the elements it expands and its content is shown, according to the item with white background. Only one element must be opened at a time, that is, when clicking on one element, the others must be collapsed. The clicked element must have its colors changed and the arrow must change direction (according to layout);
+In the fifth section (form) the background should contain two colors divided by a triangular shape. The contact form must contain masks and be validated by clicking the "submit" button;
+The footer should include the centered text.
