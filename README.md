@@ -1,12 +1,12 @@
 # dot
 
-Mobile responsive . 
-Only jQuery . 
-No CSS framework or pre-processors . 
-No JavaScript framework . 
-No Angular, Bootstrap, React, Vue, etc . 
-Use task automator (gulp)  
-Compatible version with all browsers including IE 9 . 
+Mobile responsive.  
+Only jQuery.  
+No CSS framework or pre-processors.  
+No JavaScript framework.  
+No Angular, Bootstrap, React, Vue, etc.  
+Use task automator (gulp).  
+Compatible version with all browsers including IE 9.  
   
 Functionalities:  
   
